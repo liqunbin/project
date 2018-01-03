@@ -1,0 +1,3 @@
+function nihao(){
+  alert("nihao");
+}

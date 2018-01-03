@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>htmlWebpackPluginsss</title>
+    <script type="text/javascript">
+    <%=compilation.assets[htmlWebpackPlugin.files.chunks.main.entry.substr(htmlWebpackPlugin.files.publicPath.length)].source() %>
+    //直接将生成的js插如页面里面， 减少一个http请求，从而加快的页面打开的速度
+    </script>
+  </head>
+  <body>
+    <script type="text/javascript" src="bundle.js"></script>
+    <%= htmlWebpackPlugin.options.title %>
+    <%= htmlWebpackPlugin.options.data %>
+    <p>hellp</p>
+    <!-- shdajk -->
+
+
+    <% for(var key in htmlWebpackPlugin.files.chunks){ %>
+
+  		<% if(key !== 'main'){ %>
+
+  			<script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks[key].entry %>"></script>
+
+  		<% } %>
+
+  	<% } %>
+
+  </body>
+
+</html>
