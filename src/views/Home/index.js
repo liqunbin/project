@@ -10,7 +10,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        this is Home <Icon type='message' />
+        this is Home
       </div>
     );
   }
