@@ -9,10 +9,10 @@ import {
 
 import Home from './views/Home';
 import Login from './views/Login';
-
+import './assets/baseCss.css';
 ReactDOM.render(<BrowserRouter >
     <Switch>
-      <Route path="/" component={Home}/>
-      <Route path="/login" component={Login}/>
+      <Route path="/" component={Login}/>
+      <Route path="/login" component={Home}/>
     </Switch>
   </BrowserRouter>,document.getElementById('root'));

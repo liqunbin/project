@@ -51,8 +51,15 @@ webpack_conf.module.rules = [
           "less-loader"
         ]
     }, {
-        test: /\.(png|jpg|gif|md)$/,
-        use: ['url-loader?limit=10000&name=images/[md5:hash:base64:10].[ext]']
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
     }, {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         use: ['url-loader?limit=10000&mimetype=image/svg+xml']
@@ -84,7 +91,7 @@ webpack_conf.plugins = [
     },
     // chunks:['main'],//仅加载哪些js模块
   }),
-  // new webpack.NamedModulesPlugin()
+  new webpack.NamedModulesPlugin()
   // new webpack.HotModuleReplacementPlugin()
 ];
 
