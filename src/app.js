@@ -1,7 +1,18 @@
-import Footer from './components/Footer';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {
+  BrowserRouter,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom';
 
-const App = ()=>{
-  console.log(Footer)
-}
+import Home from './views/Home';
+import Login from './views/Login';
 
-new App();
+ReactDOM.render(<BrowserRouter >
+    <Switch>
+      <Route path="/" component={Home}/>
+      <Route path="/login" component={Login}/>
+    </Switch>
+  </BrowserRouter>,document.getElementById('root'));

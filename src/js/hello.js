@@ -1,3 +1,0 @@
-function nihao(){
-  alert("nihao");
-}

@@ -23,6 +23,7 @@
   },
   "scripts": {
     "build": "webpack --colors --progress --watch ",
+    "start": "webpack-dev-server --open --watch"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
