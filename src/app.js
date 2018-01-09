@@ -6,13 +6,17 @@ import {
   Link,
   Switch
 } from 'react-router-dom';
-
+import { Provider } from 'react-redux';
 import Home from './views/Home';
 import Login from './views/Login';
 import './assets/baseCss.css';
-ReactDOM.render(<BrowserRouter >
+import store from './store/index';
+ReactDOM.render(
+<Provider store={store}>
+<BrowserRouter >
     <Switch>
       <Route path="/" component={Login}/>
-      <Route path="/login" component={Home}/>
+      <Route path="/home" component={Home}/>
     </Switch>
-  </BrowserRouter>,document.getElementById('root'));
+  </BrowserRouter>
+  </Provider>,document.getElementById('root'));

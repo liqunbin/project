@@ -5,3 +5,7 @@
   width: 100%;
   background-image: url("../../static/bg.png");
 }
+
+body , html{
+  height: 100%
+}
