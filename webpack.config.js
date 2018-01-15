@@ -23,48 +23,7 @@ webpack_conf.output = {
     // chunkFilename: debug? '[name].js':'[name].[chunkhash].js',
 };
 
-webpack_conf.module.rules = [
-    {
-        test:/\.js$/,
-        exclude: /node_modules/,
-        include: [
-            path.resolve(__dirname, "src")//定义只解析SRC下的js文件
-        ],
-        use:{
-          loader:'babel-loader',
-          options:{
-            presets:['env'],//新版本的babel，支持解析ES6、ES7、ES8语法
-            plugins:['transform-runtime'],//对一些公共使用的方法模块建立一个独立模块引用，从而避免的重复引用，一定成都加快的打包速度
-          }
-        }
-    },
-    {
-        test: /\.css$/,
-        use: [
-          "style-loader",
-           "css-loader"
-         ]
-    }, {
-        test: /\.less$/,
-        use: [
-          "postcss-loader",
-          "less-loader"
-        ]
-    }, {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192
-            }
-          }
-        ]
-    }, {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        use: ['url-loader?limit=10000&mimetype=image/svg+xml']
-    }
-];
+
 
 webpack_conf.devServer={
         contentBase: path.join(__dirname, 'dist'),
@@ -107,7 +66,7 @@ webpack_conf.plugins = [
             use:{
               loader:'babel-loader',
               options:{
-                presets:['env'],//新版本的babel，支持解析ES6、ES7、ES8语法
+                presets:['env','es2015','react'],//新版本的babel，支持解析ES6、ES7、ES8语法
                 plugins:['transform-runtime'],//对一些公共使用的方法模块建立一个独立模块引用，从而避免的重复引用，一定成都加快的打包速度
               }
             }

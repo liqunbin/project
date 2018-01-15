@@ -1,15 +1,14 @@
-import React  from 'react';
+import React, { Component } from 'react';
 import {
   Link
 } from 'react-router-dom';
-
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { login } from '../../actions/login.js';
 import './index.css';
 import styles from './index.less';
 import { Button } from 'antd';
-class Login extends React.Component {
+class Login extends Component {
   constructor () {
     super()
     // this.state = {
@@ -24,8 +23,7 @@ class Login extends React.Component {
     console.log(this.props,this.props.loading)
    
   }
-  onClick = () =>  {
-    console.log('sss')
+  onClick(){
     console.log(this.props)
     this.props.login()
   }
@@ -35,7 +33,7 @@ class Login extends React.Component {
       <div id='login'>
         this is Login
 
-      <Button onClick={this.onClick.bind(this)}/>
+      <Button onClick={this.onClick.bind(this)}>Login</Button>
       </div>
     );
   }
