@@ -39,22 +39,22 @@ export default function promiseMiddleware ({ dispatch }) {
         // ...!!meta ? { meta } : {}
       })
     }
-    if (isPromise(action.payload)) {
-      const { promise, data } = payload;
-      const getResolveAction = isError => {
-        return ({
-          type: `${type}_${isError ? ERROR : SUCCESS}`,
-          // ...!!meta ? { meta } : {}
-          // ...!!isError ? { error: true } : {},
-        })
-      }
-      action.payload.promise = promise.then(
-        result => {
-          dispatch({ ...getResolveAction(), payload: result })
-        },
-        error => {
-          dispatch({ ...getResolveAction(true), payload: error, error: true })
-        })
-    }
+    // if (isPromise(action.payload)) {
+    //   const { promise, data } = payload;
+    //   const getResolveAction = isError => {
+    //     return ({
+    //       type: `${type}_${isError ? ERROR : SUCCESS}`,
+    //       // ...!!meta ? { meta } : {}
+    //       // ...!!isError ? { error: true } : {},
+    //     })
+    //   }
+    //   action.payload.promise = promise.then(
+    //     result => {
+    //       dispatch({ ...getResolveAction(), payload: result })
+    //     },
+    //     error => {
+    //       dispatch({ ...getResolveAction(true), payload: error, error: true })
+    //     })
+    // }
   };
 }

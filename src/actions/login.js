@@ -3,12 +3,14 @@ import types from '../store/types';
 
 
 export function login(param) {
-
-    return 'success';
-//   return (dispatch, getState) => {
-//       dispatch({
-//           type: types.LOGIN,
-//           data:param
-//       })
-//   }
+    // console.log('ssss')
+    // return 'success';
+    
+  return (dispatch, getState) => {
+      console.log('rrr',getState)
+      dispatch({
+          type: types.LOGIN,
+          data:param
+      })
+  }
 }
