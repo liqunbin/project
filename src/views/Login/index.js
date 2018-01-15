@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { login } from '../../actions/login.js';
+import { login, editMenber } from '../../actions/login.js';
 import './index.css';
 import styles from './index.less';
 import { Button , Layout, Menu, Breadcrumb, Icon, Table, Dropdown } from 'antd';
@@ -30,13 +30,13 @@ class Login extends Component {
     console.log(this.props)
     this.props.login()
   }
-  editMenber(){
+  editMenber=()=>{
+    this.props.editMenber({info:{name:'lisi',age:12}})
+  }
+  editBank=()=>{
 
   }
-  editBank(){
-
-  }
-  editSFZ(){
+  editSFZ=()=>{
 
   }
   render() {
@@ -197,7 +197,8 @@ function mapStateToProps(state) {
 const mapDispatchToProps = (dispatch) => {
   console.log('atction',bindActionCreators)
   return {
-    login: bindActionCreators(login, dispatch)
+    login: bindActionCreators(login, dispatch),
+    editMenber:bindActionCreators(editMenber, dispatch),
   };
 }
 // export default Login;

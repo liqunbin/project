@@ -21,6 +21,7 @@ export default function promiseMiddleware ({ dispatch }) {
     // 设计思路：根据FSA规范，加入不在 ['type', 'payload', 'error', 'meta'] 范围内的参数 parmas，区分是 ajax请求 还是 本地 reducer state修改方法）
     // 此处设计参考 redux-promise, 带有 payload的都会被过滤
     if (!isFSA(action)) {
+      console.log(1)
       next(action)
     }
     //    ---------------- 增加PENDING状态 ----------------
@@ -31,6 +32,7 @@ export default function promiseMiddleware ({ dispatch }) {
      * 但这个对象不是ajax请求，不需要PEDING状态，所以加入是否是promise对象的判断，如果不是正常执行，
      * 反之，增加状态
      */
+    console.log(2)
     if (!isPromise(action.payload)) {
       if (isFSA(action)) next(action);
     } else {
@@ -39,22 +41,22 @@ export default function promiseMiddleware ({ dispatch }) {
         // ...!!meta ? { meta } : {}
       })
     }
-    // if (isPromise(action.payload)) {
-    //   const { promise, data } = payload;
-    //   const getResolveAction = isError => {
-    //     return ({
-    //       type: `${type}_${isError ? ERROR : SUCCESS}`,
-    //       // ...!!meta ? { meta } : {}
-    //       // ...!!isError ? { error: true } : {},
-    //     })
-    //   }
-    //   action.payload.promise = promise.then(
-    //     result => {
-    //       dispatch({ ...getResolveAction(), payload: result })
-    //     },
-    //     error => {
-    //       dispatch({ ...getResolveAction(true), payload: error, error: true })
-    //     })
-    // }
+    if (isPromise(action.payload)) {
+      const { promise, data } = payload;
+      const getResolveAction = isError => {
+        return ({
+          type: `${type}_${isError ? ERROR : SUCCESS}`,
+          // ...!!meta ? { meta } : {}
+          // ...!!isError ? { error: true } : {},
+        })
+      }
+      action.payload.promise = promise.then(
+        result => {
+          dispatch({ ...getResolveAction(), payload: result })
+        },
+        error => {
+          dispatch({ ...getResolveAction(true), payload: error, error: true })
+        })
+    }
   };
 }

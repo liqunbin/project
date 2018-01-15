@@ -14,3 +14,13 @@ export function login(param) {
       })
   }
 }
+
+export function editMenber(param) {
+
+  return (dispatch, getState) => {
+      dispatch({
+          type: types.EDIT_MENBER,
+          data:param
+      })
+  }
+}

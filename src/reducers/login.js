@@ -12,7 +12,11 @@ const initialState = {
         return Object.assign({}, state, {
 
         });
-        // return state.set('isAuth', !state.isAuth);
       },
+    [`${types.EDIT_MENBER}`]: (state, data, params) => {
+      return Object.assign({}, state, {
+        info:data
+      });
+    },
 
   })

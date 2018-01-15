@@ -6,7 +6,8 @@ import keyMirror from 'key-mirror';
 
 export default keyMirror({
     //Login
-    LOGIN:null
+    LOGIN:null,
+    EDIT_MENBER:null
 
 
 });
