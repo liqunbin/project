@@ -65,10 +65,10 @@ webpack_conf.plugins = [
             ],
             use:{
               loader:'babel-loader',
-              options:{
-                presets:['env','es2015','react'],//新版本的babel，支持解析ES6、ES7、ES8语法
-                plugins:['transform-runtime'],//对一些公共使用的方法模块建立一个独立模块引用，从而避免的重复引用，一定成都加快的打包速度
-              }
+            //   options:{
+            //     // presets:['env','es2015','react'],//新版本的babel，支持解析ES6、ES7、ES8语法
+            //     plugins:['transform-runtime'],//对一些公共使用的方法模块建立一个独立模块引用，从而避免的重复引用，一定成都加快的打包速度
+            //   }
             }
         },
         {
