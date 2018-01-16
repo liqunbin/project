@@ -2,12 +2,9 @@
 import types from '../store/types';
 
 
-export function login(param) {
-    // console.log('ssss')
-    // return 'success';
-    
+export function login(param) {    
   return (dispatch, getState) => {
-      console.log('rrr',getState)
+    //   console.log('rrr',getState)
       dispatch({
           type: types.LOGIN,
           data:param
@@ -16,7 +13,6 @@ export function login(param) {
 }
 
 export function editMenber(param) {
-
   return (dispatch, getState) => {
       dispatch({
           type: types.EDIT_MENBER,

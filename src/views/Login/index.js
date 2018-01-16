@@ -23,7 +23,7 @@ class Login extends Component {
     // }
   }
   componentWillMount () {
-    console.log(this.props,this.props.loading)
+    // console.log(this.props,this.props.loading)
    
   }
   onClick=()=>{
