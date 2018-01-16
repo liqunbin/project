@@ -8,6 +8,7 @@
     "babel-polyfill": "^6.26.0",
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
+    "express": "^4.16.2",
     "flux-standard-action": "^2.0.0",
     "immutable": "^3.8.2",
     "jquery": "^3.2.1",
