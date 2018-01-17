@@ -132,7 +132,7 @@ class Login extends Component {
     const data = [
       {
         name:'zhangsan',
-        key:'id123',
+        key:'id1234',
         org:'彩生活服务集团',
         phone:'1348598392',
         sex:'男',
@@ -142,7 +142,7 @@ class Login extends Component {
         colourManger:'CGJadmin',
         qudao:'彩管家',
         status:'正常',
-        creatTime:'2018.1.1'
+        creatTime:'2018.1.16'
 
       }
     ]
@@ -195,7 +195,6 @@ function mapStateToProps(state) {
 
 // 哪些 action 创建函数是我们想要通过 props 获取的？
 const mapDispatchToProps = (dispatch) => {
-  console.log('atction',bindActionCreators)
   return {
     login: bindActionCreators(login, dispatch),
     editMenber:bindActionCreators(editMenber, dispatch),

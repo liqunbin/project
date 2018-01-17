@@ -50,7 +50,8 @@ webpack_conf.plugins = [
     },
     // chunks:['main'],//仅加载哪些js模块
   }),
-  new webpack.NamedModulesPlugin()
+  new webpack.NamedModulesPlugin(),
+  new webpack.HotModuleReplacementPlugin()//热加载插件  
   // new webpack.HotModuleReplacementPlugin()
 ];
 

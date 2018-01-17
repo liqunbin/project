@@ -9,7 +9,7 @@ const loggerMiddleware = createLogger({
   level: 'info',
   collapsed: true
 })
-//使用redux的combineReducers方法将所有reducer打包起来, 配置后在控制台可看到请求状态
+//使用redux的combineReducers方法将所有reducer打包起来, 配置后在控制台可看到每次action调用的请求状态
 import reducer from './reducers'
 
 const createStoreWithMiddleware = applyMiddleware(
