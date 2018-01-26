@@ -29,7 +29,8 @@
     "style-loader": "^0.19.1"
   },
   "scripts": {
-    "build": "webpack --colors --progress --watch ",
+    "build-dev":"cross-env NODE_ENV=production webpack --colors --progress --watch",
+    "build": "webpack --colors --progress --watch",
     "start": "webpack-dev-server --open --watch"
   },
   "devDependencies": {

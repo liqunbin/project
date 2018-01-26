@@ -22,22 +22,22 @@ webpack_conf.output = {
     filename: 'js/[name]-bundle.js',
     // chunkFilename: debug? '[name].js':'[name].[chunkhash].js',
 };
+webpack_conf.devtool = 'source-map';
 
 
-
-// webpack_conf.devServer={
-//         contentBase: path.join(__dirname, 'dist'),
-//         port: 3000,
-//         host: 'localhost',
-//         open:true
-//         // historyApiFallback: true,
-//         // inline: true,
-//         // // hot: true,
-//         // watchOptions: {
-//         //   aggregateTimeout: 300,
-//         //   poll: 1000
-//         // }
-//     };
+webpack_conf.devServer={
+        contentBase: path.join(__dirname, 'dist'),
+        port: 3000,
+        host: 'localhost',
+        open:true
+        // historyApiFallback: true,
+        // inline: true,
+        // // hot: true,
+        // watchOptions: {
+        //   aggregateTimeout: 300,
+        //   poll: 1000
+        // }
+    };
 
 webpack_conf.plugins = [
   new htmlWebpackPlugin({

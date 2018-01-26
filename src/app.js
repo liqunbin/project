@@ -20,13 +20,11 @@ import { ConnectedRouter } from 'react-router-redux';
 const history = createHistory();
 ReactDOM.render(
 <Provider store={store}>
-{/* <ConnectedRouter history={history}> */}
 <Router>
   <Switch>
-        <Route exact path='/' component={Login} />
+        <Route exact path='/' component={Login} />{/*exact 匹配完全相等的路径*/}
         <Route path='/home' component={Home} />
         
   </Switch> 
 </Router>
-{/* </ConnectedRouter> */}
   </Provider>,document.getElementById('root'));

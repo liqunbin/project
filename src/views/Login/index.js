@@ -7,9 +7,10 @@ import { connect } from 'react-redux';
 import { login, editMenber } from '../../actions/login.js';
 import './index.css';
 import styles from './index.less';
-import { Button , Layout, Menu, Breadcrumb, Icon, Table, Dropdown } from 'antd';
+import { Button , Layout, Menu, Breadcrumb, Icon, Table, Dropdown, Select } from 'antd';
 
 const { SubMenu } = Menu;
+const Option = Select.Option;
 const { Header, Content, Footer, Sider } = Layout;
 class Login extends Component {
   constructor () {
@@ -23,7 +24,7 @@ class Login extends Component {
     // }
   }
   componentWillMount () {
-    // console.log(this.props,this.props.loading)
+    console.log(this.props)
    
   }
   onClick=()=>{
@@ -40,6 +41,7 @@ class Login extends Component {
 
   }
   render() {
+    // console.log('match',match)
     const menu = (
       <Menu>
         <Menu.Item>
@@ -175,7 +177,6 @@ class Login extends Component {
           dataSource={data}
           scroll={{x:1700}}
         />
-
         </Content>
       </Layout>
     </Content>
