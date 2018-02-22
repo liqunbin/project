@@ -90,6 +90,15 @@ webpack_conf.plugins = [
         }, {
             test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
             use: ['url-loader?limit=10000&mimetype=image/svg+xml']
+        }, {
+            test: /\.eot/,
+			loader: 'file-loader?prefix=font/'
+		}, {
+			test: /\.woff/,
+			loader: 'file-loader?prefix=font/&limit=10000&mimetype=application/font-woff'
+		}, {
+			test: /\.ttf/,
+			loader: 'file-loader?prefix=font/'
         }
     ];
 

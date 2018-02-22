@@ -4,14 +4,24 @@ import {
 } from 'react-router-dom';
 import { Divider } from 'antd';
 import { Icon } from 'antd';
-import SimpleMDE from'simplemde';
+import './index.css' 
+import 'simplemde/dist/simplemde.min.css';
+import SimpleMDE from 'simplemde';
+class MarkDown extends React.Component {
 
-class Home extends React.Component {
-
-
-  componentWillMount () { }
+    constructor(props) {
+        super(props);
+        code: "# Markdown"
+        this.state = {
+          textValue:'222'
+        }
+    }
+  componentWillMount () {
+    
+    console.log('MarkDown',MarkDown)
+   }
   componentDidMount (){
-    var simplemde = new SimpleMDE({
+    new SimpleMDE({
       autofocus: true,
       autosave: {
         enabled: true,
@@ -22,7 +32,6 @@ class Home extends React.Component {
         bold: "__",
         italic: "_"
       },
-      
       element: document.getElementById("MyID"),
       forceSync: true,
       hideIcons: ["guide", "heading"],
@@ -73,45 +82,37 @@ class Home extends React.Component {
           el.innerHTML = ++this.keystrokes + " Keystrokes";
         }
       }], // Another optional usage, with a custom status bar item that counts keystrokes
-      styleSelectedText: true,
+      styleSelectedText: false,
       tabSize: 4,
-      toolbar: [{
-        name: "bold",
-        action: SimpleMDE.toggleBold,
-        className: "fa fa-bold",
-        title: "Bold",
-      },
-      {
-        name:"code",
-        action: SimpleMDE.toggleCodeBlock,
-        className:"fa fa-code",
-        title:"Code"
-      },
-      {
-        name: "custom",
-        action: function customFunction(editor){
-          // Add your own code
-        },
-        className: "fa fa-star",
-        title: "Custom Button",
-      },
-      "|", // Separator
-     
-    ],
-      // toolbar: ["bold", "italic", "heading", "|", "quote"],
-      // toolbar: true,
-      toolbarTips: true,
+      // toolbar: false,
+      // toolbarTips: false,
+      toolbar: ["bold", "italic", "heading", "|", "quote","table","link","preview","side-by-side"],
     });
   }
+  handleChange = (content) => {
+    console.log('ssss',content)
+  }
   render() {
-    
+    const option = {};
+
+const onReady = function(instance) {
+  console.log(instance.value());
+};
+
+const onEvents = {
+  'change': function() {
+    // the 'this' variable can get SimpleMDE instance
+    console.log(this.value());
+  }
+};
     return (
       <div>
-        <Divider >this is Home</Divider>
-      {/* <div id='MyID'></div> */}
-      <textarea id='MyID' style={{width:500,height:500}}/>
+        <Divider >this is MarkDown4</Divider>
+        <div className='markdown' >
+        <textarea id='MyID'></textarea>
+        </div>
       </div>
     );
   }
 }
-export default Home;
+export default MarkDown;
