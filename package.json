@@ -34,7 +34,8 @@
     "redux-saga": "^0.16.0",
     "redux-thunk": "^2.2.0",
     "simplemde": "^1.11.2",
-    "style-loader": "^0.19.1"
+    "style-loader": "^0.19.1",
+    "tui-editor": "^1.0.4"
   },
   "scripts": {
     "build-dev": "cross-env NODE_ENV=production webpack --colors --progress --watch & node server",

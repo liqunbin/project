@@ -4,7 +4,8 @@ import {
 } from 'react-router-dom';
 import { Divider } from 'antd';
 import { Icon } from 'antd';
-import './index.css' 
+// import './index.css' 
+import styles from './index.less';
 import SimpleMDE from 'simplemde'
 import marked from 'marked'
 import highlight from 'highlight.js'
@@ -58,7 +59,7 @@ class MarkDown extends React.Component {
     return (
       <div>
         <Divider >this is MarkDown2</Divider>
-        <div className='markdown'>
+        <div className={styles.markdown}>
         <textarea id="editor"></textarea>
         </div>
       </div>

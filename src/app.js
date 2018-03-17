@@ -15,6 +15,7 @@ import MarkDown from './views/MarkDown';
 import MarkDown2 from './views/MarkDown2';
 import MarkDown3 from './views/MarkDown3';
 import MarkDown4 from './views/MarkDown4';
+import MarkDown5 from './views/MarkDown5';
 import NotFind from './views/Notfined';
 import createHistory from 'history/createBrowserHistory';
 import './assets/baseCss.css';
@@ -33,6 +34,7 @@ ReactDOM.render(
         <Route path='/markdown2' component={MarkDown2} />
         <Route path='/markdown3' component={MarkDown3} />
         <Route path='/markdown4' component={MarkDown4} />
+        <Route path='/markdown5' component={MarkDown5} />
         <Redirect to="/"  />{/*路由匹配不到的重定向，指向"/" 路径*/}
         
   </Switch> 
